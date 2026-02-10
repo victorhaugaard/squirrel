@@ -13,6 +13,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
 import { Feather } from '@expo/vector-icons';
+import Svg, { Path, Circle, Rect } from 'react-native-svg';
 
 const { width, height } = Dimensions.get('window');
 
@@ -181,9 +182,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="dark" />
 
-      {/* Subtle decorative shapes */}
-      <View style={styles.decoTopRight} />
-      <View style={styles.decoBottomLeft} />
+      {/* Subtle decorative shapes removed */}
 
       {/* Main content area - centered */}
       <View style={styles.centerContent}>
@@ -195,7 +194,17 @@ export default function App() {
         }]}>
           <Animated.View style={[styles.logoGlow, { opacity: glowAnim }]} />
           <View style={styles.logoCircle}>
-            <Feather name="zap" size={28} color={C.accent} />
+            {/* Abstract Squirrel Icon (Headspace style) */}
+            <Svg width={36} height={36} viewBox="0 0 24 24" fill="none">
+              {/* Tail */}
+              <Circle cx="8" cy="13" r="6" fill={C.accent} />
+              {/* Body */}
+              <Rect x="11" y="9" width="9" height="11" rx="4.5" fill={C.accent} />
+              {/* Head */}
+              <Circle cx="15.5" cy="6.5" r="3.5" fill={C.accent} />
+              {/* Eye */}
+              <Circle cx="16.5" cy="5.5" r="0.8" fill={C.surface} />
+            </Svg>
           </View>
         </Animated.View>
 
