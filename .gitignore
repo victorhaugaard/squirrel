@@ -39,3 +39,8 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# temp files
+fraunces.zip
+fraunces_temp/
+*.backup.js
